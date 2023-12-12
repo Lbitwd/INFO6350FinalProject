@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C3L-cK-j6j">
+
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -12,6 +16,12 @@
         <!--Main Page Controller-->
         <scene sceneID="qfy-hH-RUA">
             <objects>
+
+                <viewController id="dax-sJ-gHH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDs-2m-Yyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830" y="-27"/>
+
                 <viewController storyboardIdentifier="MainPageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dax-sJ-gHH" customClass="MainPageController" customModule="JobPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2T2-Y8-oIn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -203,6 +213,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNW-hf-3a4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-48" y="806"/>
+
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -212,28 +223,375 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOq-fF-Do5">
+                                <rect key="frame" x="0.0" y="132" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Recommand" id="IeM-6L-clW">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Latest" id="qV0-Hi-xnK">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FDs-3D-QBw"/>
+                                    <barButtonItem title="Filter" image="slider.vertical.3" catalog="system" id="zdJ-0q-6Sg">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Ir-FO-2lv">
+                                <rect key="frame" x="0.0" y="101" width="393" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Intern"/>
+                                    <segment title="Entry Level"/>
+                                    <segment title="Experienced"/>
+                                </segments>
+                            </segmentedControl>
+                            <tabBar contentMode="scaleToFill" id="ILN-3Q-HaQ">
+                                <rect key="frame" x="0.0" y="774" width="393" height="49"/>
+
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILN-3Q-HaQ">
                                 <rect key="frame" x="0.0" y="769" width="392" height="49"/>
+
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem title="Jobs" id="bYy-Q3-gLr">
+                                    <tabBarItem title="Jobs" selectedImage="bag.fill" catalog="system" id="bYy-Q3-gLr">
                                         <imageReference key="image" image="bag" catalog="system" symbolScale="large"/>
-                                        <color key="badgeColor" red="0.66074810606060608" green="0.09221845035873126" blue="0.54016738206716153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="badgeColor" systemColor="tableCellBlueTextColor"/>
                                     </tabBarItem>
-                                    <tabBarItem title="Community" image="person.2" catalog="system" id="rIm-DP-dU0"/>
-                                    <tabBarItem title="Manage" image="checklist" catalog="system" id="UaC-NF-TnQ"/>
-                                    <tabBarItem title="Me" image="person.crop.circle" catalog="system" id="1qK-bf-Pjf"/>
+                                    <tabBarItem title="Community" selectedImage="person.2.fill" catalog="system" id="rIm-DP-dU0">
+                                        <imageReference key="image" image="person.2" catalog="system" symbolScale="large"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Manage" selectedImage="checklist.checked" catalog="system" id="UaC-NF-TnQ">
+                                        <imageReference key="image" image="checklist" catalog="system" symbolScale="large"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Me" selectedImage="person.circle.fill" catalog="system" id="1qK-bf-Pjf">
+                                        <imageReference key="image" image="person.crop.circle" catalog="system" symbolScale="large"/>
+                                    </tabBarItem>
                                 </items>
                             </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WKb-M9-E0B">
+                                <rect key="frame" x="16" y="176" width="361" height="598"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="130" id="etU-wR-oUS">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="etU-wR-oUS" id="EW2-vI-liS">
+                                            <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKM-IR-52K">
+                                                    <rect key="frame" x="20" y="11" width="152" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Job Title">
+                                                            <attributes>
+                                                                <font key="NSFont" size="20" name="Georgia-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BD239901-1972-44BC-AAB0-548C4672CB9D_1_105_c" translatesAutoresizingMaskIntoConstraints="NO" id="t6v-2U-Pb6">
+                                                    <rect key="frame" x="20" y="63" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiktok" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-BO-uN3">
+                                                    <rect key="frame" x="76" y="58" width="63" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boston MA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2O-FN-6Q9">
+                                                    <rect key="frame" x="239" y="58" width="91" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBq-Ey-S0x">
+                                                    <rect key="frame" x="239" y="11" width="85" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="tableCellBlueTextColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="$">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="45">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleBraille-Outline6Dot"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="/hour">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="4"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="129" id="OiI-K8-5hl">
+                                        <rect key="frame" x="0.0" y="180" width="361" height="129"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OiI-K8-5hl" id="hL4-7A-9bC">
+                                            <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="129"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0G-nn-XH4">
+                                                    <rect key="frame" x="20" y="11" width="152" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Job Title">
+                                                            <attributes>
+                                                                <font key="NSFont" size="20" name="Georgia-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BD239901-1972-44BC-AAB0-548C4672CB9D_1_105_c" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-zs-PBp">
+                                                    <rect key="frame" x="20" y="63" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiktok" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpC-KZ-Egf">
+                                                    <rect key="frame" x="76" y="58" width="63" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boston MA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzl-DI-yH3">
+                                                    <rect key="frame" x="239" y="58" width="91" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El2-Pu-lN8">
+                                                    <rect key="frame" x="239" y="11" width="85" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="tableCellBlueTextColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="$">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="45">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleBraille-Outline6Dot"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="/hour">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="3"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="130" id="Scx-SR-KhP">
+                                        <rect key="frame" x="0.0" y="309" width="361" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Scx-SR-KhP" id="gAj-2p-hrP">
+                                            <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xm-yj-elj">
+                                                    <rect key="frame" x="20" y="11" width="152" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Job Title">
+                                                            <attributes>
+                                                                <font key="NSFont" size="20" name="Georgia-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BD239901-1972-44BC-AAB0-548C4672CB9D_1_105_c" translatesAutoresizingMaskIntoConstraints="NO" id="VSk-5T-Nv1">
+                                                    <rect key="frame" x="20" y="63" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiktok" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGJ-Ok-7kJ">
+                                                    <rect key="frame" x="76" y="58" width="63" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boston MA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXE-wU-fhK">
+                                                    <rect key="frame" x="239" y="58" width="91" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5k-hg-iBy">
+                                                    <rect key="frame" x="239" y="11" width="85" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="tableCellBlueTextColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="$">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="45">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleBraille-Outline6Dot"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="/hour">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="2"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="130" id="T8F-PZ-gHA">
+                                        <rect key="frame" x="0.0" y="439" width="361" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T8F-PZ-gHA" id="PAa-za-f72">
+                                            <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3Q-1E-dTD">
+                                                    <rect key="frame" x="20" y="11" width="152" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Job Title">
+                                                            <attributes>
+                                                                <font key="NSFont" size="20" name="Georgia-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BD239901-1972-44BC-AAB0-548C4672CB9D_1_105_c" translatesAutoresizingMaskIntoConstraints="NO" id="VbS-he-w2C">
+                                                    <rect key="frame" x="20" y="63" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiktok" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pme-zv-zT2">
+                                                    <rect key="frame" x="76" y="58" width="63" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boston MA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bii-oU-dze">
+                                                    <rect key="frame" x="239" y="58" width="91" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1j-QJ-11x">
+                                                    <rect key="frame" x="239" y="11" width="85" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="tableCellBlueTextColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="$">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="45">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleBraille-Outline6Dot"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="/hour">
+                                                            <attributes>
+                                                                <color key="NSColor" systemColor="tintColor"/>
+                                                                <font key="NSFont" size="17" name="Georgia-Bold"/>
+                                                                <font key="NSOriginalFont" size="17" name="AppleColorEmoji"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="1"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" text="" placeholder="Search By Job Title / Company Name" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2y-f2-MTa">
+                                <rect key="frame" x="0.0" y="45" width="393" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tze-Vi-jOJ"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="aTG-sG-ZEH"/>
+                    <connections>
+                        <outlet property="jobRecommand" destination="kOq-fF-Do5" id="0bU-NL-PSq"/>
+                        <outlet property="jobTableView" destination="WKb-M9-E0B" id="7z6-pn-TXT"/>
+                        <outlet property="jobTypeSegment" destination="3Ir-FO-2lv" id="vJ8-NW-zfn"/>
+                        <outlet property="searchField" destination="W2y-f2-MTa" id="k5A-IK-pOY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+
+            <point key="canvasLocation" x="363" y="-55"/>
+
             <point key="canvasLocation" x="1756.4885496183206" y="-1.4084507042253522"/>
         </scene>
         <!--Login Controller-->
@@ -335,18 +693,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4p-9Y-Qa2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-818" y="17"/>
+
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="PEZ-si-4VA"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="BD239901-1972-44BC-AAB0-548C4672CB9D_1_105_c" width="1021" height="769"/>
         <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="bag.fill" catalog="system" width="128" height="128"/>
         <image name="checklist" catalog="system" width="128" height="107"/>
+
+        <image name="checklist.checked" catalog="system" width="128" height="107"/>
+        <image name="person.2" catalog="system" width="128" height="87"/>
+        <image name="person.2.fill" catalog="system" width="128" height="86"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+
         <image name="person.2" catalog="system" width="128" height="82"/>
+
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <image name="slider.vertical.3" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

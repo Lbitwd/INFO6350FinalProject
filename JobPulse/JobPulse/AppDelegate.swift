@@ -10,9 +10,6 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-    var manageObjectContext: NSManagedObjectContext? = nil
     var window: UIWindow?
     
     static var shared: AppDelegate {
@@ -38,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        manageObjectContext = self.persistentContainer.viewContext
         // Override point for customization after application launch.
         return true
     }
@@ -57,21 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "DataSource") //
-
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-
-        return container
-    }()
-    
-    lazy var managedObjectContext: NSManagedObjectContext = {
-        return persistentContainer.viewContext
-    }()
     func setupRootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
         

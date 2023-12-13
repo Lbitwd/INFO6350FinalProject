@@ -34,7 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "DataSource") //
+        let container = NSPersistentContainer(name: "DataSource")
+
+        let description = NSPersistentStoreDescription()
+        description.shouldMigrateStoreAutomatically = true
+        description.shouldInferMappingModelAutomatically = true
+        container.persistentStoreDescriptions = [description]
 
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -44,10 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return container
     }()
+
     
     lazy var managedObjectContext: NSManagedObjectContext = {
         return persistentContainer.viewContext
     }()
+    
+
 
 }
 

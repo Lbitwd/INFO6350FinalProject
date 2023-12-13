@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75555A102B2915CD00D9FABE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75555A0F2B2915CD00D9FABE /* ProfileViewController.swift */; };
 		F0498CDB2B2526CE00ECEC5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0498CDA2B2526CE00ECEC5A /* AppDelegate.swift */; };
 		F0498CDD2B2526CE00ECEC5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0498CDC2B2526CE00ECEC5A /* SceneDelegate.swift */; };
 		F0498CDF2B2526CE00ECEC5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0498CDE2B2526CE00ECEC5A /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75555A0F2B2915CD00D9FABE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F0498CD72B2526CE00ECEC5A /* JobPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0498CDA2B2526CE00ECEC5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0498CDC2B2526CE00ECEC5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				F0498CDC2B2526CE00ECEC5A /* SceneDelegate.swift */,
 				F0498CDE2B2526CE00ECEC5A /* ViewController.swift */,
 				F0498CE02B2526CE00ECEC5A /* Main.storyboard */,
+				75555A0F2B2915CD00D9FABE /* ProfileViewController.swift */,
 				F0681AD42B28E215009D059E /* communityViewController.swift */,
 				F0681AD22B28ADA2009D059E /* LoginViewController.swift */,
 				F0498CEE2B25273800ECEC5A /* DataSource.xcdatamodeld */,
@@ -118,7 +121,7 @@
 				};
 			};
 			buildConfigurationList = F0498CD22B2526CE00ECEC5A /* Build configuration list for PBXProject "JobPulse" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -159,6 +162,7 @@
 				F0498CDB2B2526CE00ECEC5A /* AppDelegate.swift in Sources */,
 				F0681AD52B28E215009D059E /* communityViewController.swift in Sources */,
 				F0498CF02B25273800ECEC5A /* DataSource.xcdatamodeld in Sources */,
+				75555A102B2915CD00D9FABE /* ProfileViewController.swift in Sources */,
 				F0498CDD2B2526CE00ECEC5A /* SceneDelegate.swift in Sources */,
 				F0681ACB2B283C2C009D059E /* JobTableViewCell.swift in Sources */,
 			);
@@ -238,7 +242,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -295,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -318,6 +322,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

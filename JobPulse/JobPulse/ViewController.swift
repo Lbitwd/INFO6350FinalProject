@@ -21,7 +21,7 @@ extension String {
     }
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UITabBarDelegate{
     
     var job: [Job] = []
     var company: [Company] = []
@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var experience: [Experience] = []
     let dateFormatter = DateFormatter()
     var filteredJobs: [Job] = []
+    var currentUser: Employee?
     
     @IBOutlet weak var jobTypeSegment: UISegmentedControl!
     @IBOutlet weak var jobTableView: UITableView!
@@ -40,25 +41,40 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tabBar: UITabBar!
     /*@IBOutlet weak var jobpageSwitch: UITabBarItem!
     @IBOutlet weak var communitypageSwitch: UITabBarItem!
-    @IBOutlet weak var managepageSwitch: UITabBarItem!
-    @IBOutlet weak var employeepageSwitch: UITabBarItem!*/
+    @IBOutlet weak var managepageSwitch: UITabBarItem!*/
+//    @IBOutlet weak var employeepageSwitch: UITabBarItem!
     
     var context: NSManagedObjectContext!
     var managedContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).manageObjectContext!
     
     override func viewDidLoad() {
-        //clearAllData()
+        clearAllData()
         super.viewDidLoad()
-        //saveDataToCoreData()
-        loadSavedData()
+        saveDataToCoreData()
+//        loadSavedData()
 
         jobTypeSegment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.blue], for: .selected)
         jobTableView.delegate = self
         jobTableView.dataSource = self
         searchField.delegate = self
         filterJobs()
+        
+        self.tabBar.delegate = self
     }
 
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        // Check which tab bar item was selected
+        if item.tag == 3 {
+            // Load and display the second view controller
+            let profileViewController = storyboard?.instantiateViewController(withIdentifier: "ProfileViewControllerIdentifier") as! ProfileViewController
+            
+            // Pass the currentUser to ProfileViewController
+            profileViewController.currentUser = currentUser
+            
+            navigationController?.pushViewController(profileViewController, animated: true)
+        }
+        // Add similar conditions for other tab bar items if needed
+    }
     
     func saveDataToCoreData() {
         
